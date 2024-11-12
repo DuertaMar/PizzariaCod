@@ -1,0 +1,2 @@
+public class clienteFisico {
+}
