@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Pizzaria {
@@ -11,12 +12,27 @@ public class Pizzaria {
         this.caixa = 0;
     }
 
-    public void apresentarMenu() {
+    public void atenderCliente() {
         Scanner scanner = new Scanner(System.in);
+        String nomeCliente, tipoCliente;
         System.out.println("Digite seu nome: ");
-        String nomeCliente = scanner.nextLine();
-        ClienteFisico cliente = new ClienteFisico(nomeCliente, this);
+        nomeCliente = scanner.nextLine();
+        System.out.println("Que tipo de cliente você é? Digite 'F' para cliente físico " +
+                "ou 'V' para cliente virtual.");
+        tipoCliente = scanner.nextLine().toUpperCase();
 
+        if (tipoCliente.equals("V")) {
+            System.out.print("Digite seu endereço para entrega: ");
+            String enderecoEntrega = scanner.nextLine();
+            ClienteVirtual cliente = new ClienteVirtual(nomeCliente, this, enderecoEntrega);
+            apresentarMenu(cliente);
+        } else {
+            ClienteFisico cliente = new ClienteFisico(nomeCliente, this);
+            apresentarMenu(cliente);
+        }
+    }
+    private void apresentarMenu(Cliente cliente) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Olá, " + cliente.getNome() + ", seja bem-vindo(a) à "+this.getNome()+"!");
 
         int comando;
@@ -53,7 +69,7 @@ public class Pizzaria {
         System.out.println("9. Sorvete - R$8");
     }
 
-    private void realizarPedido(int comando, ClienteFisico cliente, int qtd) {
+    private void realizarPedido(int comando, Cliente cliente, int qtd) {
         switch (comando) {
             case 1:
                 Pedido calabresa = new Pedido("Pizza de Calabresa", cliente, 35, qtd);
@@ -102,9 +118,14 @@ public class Pizzaria {
         }
     }
 
-    private void receberPagamento(ClienteFisico cliente) {
+    private void receberPagamento(Cliente cliente) {
         Scanner scanner = new Scanner(System.in);
         if (cliente.getDivida() > 0) {
+            if (cliente instanceof ClienteVirtual) {
+                ClienteVirtual clienteVirtual = (ClienteVirtual) cliente;
+                System.out.println("O pedido será entregue para o endereço "+clienteVirtual.getEndereco());
+                System.out.println("O tempo estimado de entrega é de " + clienteVirtual.getTempoEntrega() + " minutos.");
+            }
             System.out.println("O total a pagar é R$" + cliente.getDivida() + ". Digite 1 para pagar:");
             int comando = scanner.nextInt();
 
@@ -118,6 +139,11 @@ public class Pizzaria {
         } else {
             System.out.println("Nenhuma dívida a pagar.");
         }
+    }
+
+    public int calcularTempoEntrega() {
+        Random random = new Random();
+        return 10 + random.nextInt(11);
     }
 
     public String getNome() {
@@ -140,6 +166,4 @@ public class Pizzaria {
     }
 }
 
-/*
 
- * */
