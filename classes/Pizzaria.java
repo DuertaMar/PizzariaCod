@@ -141,6 +141,92 @@ public class Pizzaria {
         }
     }
 
+
+    public void pedirDemanda () {
+        Scanner scanner = new Scanner(System.in);
+        int escolha, qnt;
+        Random random = new Random();
+        fornecedor fornecedor1 = new fornecedor("PizzaPrima", random.nextInt(21),"Pizzas");
+        fornecedor fornecedor2 = new fornecedor("PizzaMateria", random.nextInt(21),"Pizzas");
+        fornecedor fornecedor3 = new fornecedor("BebidasLighs", random.nextInt(10),"Bebidas");
+        fornecedor fornecedor4 = new fornecedor("SucosNatural", random.nextInt(10),"Sucos");
+        fornecedor fornecedor5 = new fornecedor("SobreHoje", random.nextInt(14),"Sobremesas");
+        fornecedor fornecedor6 = new fornecedor("SobreGelados", random.nextInt(14),"Sobremesas");
+        if (this.caixa > 0) {
+            do {
+                System.out.println("A pizzaria está precisando de que tipo de demanda? pressione o valor entre 1 a 3.");
+                System.out.println("1_Pizzas\n2_Bebidas, Sucos\n3_Sobremesas");
+                escolha = scanner.nextInt();
+            } while (escolha<1|escolha>3);
+
+            if (escolha == 1){
+                do {
+                    System.out.println("Os fornecedores são: " +
+                            "\n1_Nome: " + fornecedor1.getNome() + " com os preços de: " + fornecedor1.getPreco() +
+                            "\n2_Nome: " + fornecedor2.getNome() + " com os preços de: " + fornecedor2.getPreco());
+                    System.out.println("Escolha entre os fornecedores.");
+                    escolha = scanner.nextInt();
+                } while (escolha<1||escolha>2);
+                do {
+
+
+                    System.out.println("Agora escolha a quantidade.\nLembrar da quantidade disponivel em caixa que atualmente é R$" + getCaixa());
+                    qnt = scanner.nextInt();
+                } while(qnt*fornecedor1.getPreco()>getCaixa()||qnt*fornecedor2.getPreco()>getCaixa());
+                if (escolha == 1){
+                    setCaixa(getCaixa()-fornecedor1.Demanda(qnt));
+                } else {
+                    setCaixa(getCaixa()-fornecedor2.Demanda(qnt));
+                }
+
+
+            } else if (escolha==2) {
+                do {
+                    System.out.println("Os fornecedores são: " +
+                            "\n1_Nome: " + fornecedor3.getNome() + " com os preços de: " + fornecedor3.getPreco() +
+                            "\n2_Nome: " + fornecedor4.getNome() + " com os preços de: " + fornecedor4.getPreco());
+                    System.out.println("Escolha entre os fornecedores.");
+                    escolha = scanner.nextInt();
+                } while (escolha<1||escolha>2);
+                do {
+
+
+                    System.out.println("Agora escolha a quantidade.\nLembrar da quantidade disponivel em caixa que atualmente é R$" + getCaixa());
+                    qnt = scanner.nextInt();
+                } while(qnt*fornecedor3.getPreco()>getCaixa()||qnt*fornecedor4.getPreco()>getCaixa());
+                if (escolha == 1){
+                    setCaixa(getCaixa()-fornecedor3.Demanda(qnt));
+                } else {
+                    setCaixa(getCaixa()-fornecedor4.Demanda(qnt));
+                }
+
+            } else {
+                do {
+                    System.out.println("Os fornecedores são: " +
+                            "\n1_Nome: " + fornecedor5.getNome() + " com os preços de: " + fornecedor5.getPreco() +
+                            "\n2_Nome: " + fornecedor6.getNome() + " com os preços de: " + fornecedor6.getPreco());
+                    System.out.println("Escolha entre os fornecedores.");
+                    escolha = scanner.nextInt();
+                } while (escolha<1||escolha>2);
+                do {
+
+
+                    System.out.println("Agora escolha a quantidade.\nLembrar da quantidade disponivel em caixa que atualmente é R$" + getCaixa());
+                    qnt = scanner.nextInt();
+                } while(qnt*fornecedor5.getPreco()>getCaixa()||qnt*fornecedor6.getPreco()>getCaixa());
+                if (escolha == 1){
+                    setCaixa(getCaixa()-fornecedor5.Demanda(qnt));
+                } else {
+                    setCaixa(getCaixa()-fornecedor6.Demanda(qnt));
+                }
+
+            }
+        } else {
+            System.out.println("A pizzaria está sem dinheiro, atualmente para demandas.");
+        }
+
+    }
+
     public int calcularTempoEntrega() {
         Random random = new Random();
         return 10 + random.nextInt(11);
