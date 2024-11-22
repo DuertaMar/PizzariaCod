@@ -1,5 +1,5 @@
-public class atendente extends funcionario{
-    public atendente(int salario, String funcao, String nome) {
+public class Atendente extends Funcionario{
+    public Atendente(int salario, String funcao, String nome) {
         super(salario, funcao, nome);
     }
 

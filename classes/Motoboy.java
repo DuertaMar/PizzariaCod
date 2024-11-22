@@ -1,5 +1,5 @@
-public class motoboy extends funcionario{
-    public motoboy(int salario, String funcao, String nome) {
+public class Motoboy extends Funcionario{
+    public Motoboy(int salario, String funcao, String nome) {
         super(salario, funcao, nome);
     }
 
