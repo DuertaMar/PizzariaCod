@@ -16,7 +16,7 @@ abstract class  Funcionario {
     abstract void receberComissao();
     abstract void trabalhar ();
 
-    public void verInformações (){
+    public void verInformacoes (){
         System.out.println("O nome do funcionário da pizzaria é "+getNome()
                 +", a sua função na pizzaria é "+getFuncao()+" possuindo como salário R$"+getSalario()+".");
     }

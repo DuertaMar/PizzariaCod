@@ -17,7 +17,7 @@ public class Fornecedor {
         Random random = new Random();
         int produto;
         int valor;
-        produto = random.nextInt(1-(qnt+1));
+        produto = random.nextInt((qnt));
 
         System.out.println("O fornecedor analisou a demanda e calculou o preço considerando a quantidade no" +
                 "estoque");
