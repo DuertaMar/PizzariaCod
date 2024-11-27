@@ -47,7 +47,7 @@ public class Pizzaria {
             int quantidade = scanner.nextInt();
 
             realizarPedido(comando, cliente, quantidade);
-        } while (comando != 0);
+        } while (comando < 1 || comando > 9);
         receberPagamento(cliente);
     }
 
