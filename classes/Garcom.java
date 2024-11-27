@@ -1,6 +1,6 @@
-public class garcom extends funcionario{
+public class Garcom extends Funcionario{
 
-    public garcom(int salario, String funcao, String nome) {
+    public Garcom(int salario, String funcao, String nome) {
         super(salario, funcao, nome);
     }
 

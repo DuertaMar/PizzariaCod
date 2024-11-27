@@ -1,5 +1,5 @@
-public class pizzaiolo extends funcionario{
-    public pizzaiolo(int salario, String funcao, String nome) {
+public class Pizzaiolo extends Funcionario{
+    public Pizzaiolo(int salario, String funcao, String nome) {
         super(salario, funcao, nome);
     }
 
