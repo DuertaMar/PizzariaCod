@@ -2,13 +2,11 @@ public class ClienteVirtual extends Cliente{
     private String endereco;
     private int tempoEntrega;
     private int divida;
-    private int taxaEntrega = 10;
 
     public ClienteVirtual(String nome, Pizzaria pizzaria, String enderecoEntrega) {
         super(nome);
         this.endereco = enderecoEntrega;
         this.tempoEntrega = pizzaria.calcularTempoEntrega();
-        this.receberConta(taxaEntrega);
     }
     public void receberConta(int valor) {
         this.divida += valor;
