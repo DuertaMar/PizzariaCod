@@ -15,6 +15,11 @@ public class Pizzaria {
         this.endereco = "Rua da Pizzaria";
         this.caixa = 0;
     }
+    public void verInformacoes (){
+        System.out.println("O nome da pizzaria é "+getNome()+".\nO endereço da pizzaria é "+getEndereco()+".\nO atual caixa da pizzaria é "+getCaixa()+"\nA quantidade de pizzas" +
+                ": "+getEstoquePizza()+"\nA quantidade de bebidas: "+getEstoqueBebida()+"\nA quantidade de sobremesas: "+getEstoqueSobremesa());
+    }
+
 
     public void atenderCliente() {
         Scanner scanner = new Scanner(System.in);
