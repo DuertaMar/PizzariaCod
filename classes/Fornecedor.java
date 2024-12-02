@@ -16,7 +16,7 @@ public class Fornecedor {
     public int Demanda(int qnt) {
         int valor;
         valor =calcularPreco(qnt);
-        System.out.println("O fornecedor analisou o pedido com quantidade de "+qnt+" e o preço ficara no total R$"+valor+".");
+        System.out.println("O fornecedor analisou o pedido com quantidade de "+qnt+" e o preço ficará no total de R$"+valor+".");
         System.out.println("O fornecedor está enviando as caixas de "+getTipoProduto());
         return valor;
     }
