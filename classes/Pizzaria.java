@@ -9,21 +9,41 @@ public class Pizzaria {
     private int estoqueBebida = 10;
     private int estoqueSobremesa = 10;
     private int taxaEntrega = 10;
+    private Funcionario atendente;
+    private Funcionario garcom;
+    private Funcionario motoboy;
+    private Funcionario pizzaiolo;
 
     public Pizzaria(String nome, String endereco, int caixa) {
         this.setNome(nome);
         this.setEndereco(endereco);
         this.setCaixa(caixa);
+        this.atendente = new Atendente(1600,"Atendente on-line e fisico", "Adriana");
+        this.garcom = new Garcom(1450,"Direcionar e receber clientes fisicos","Juninho");
+        this.motoboy = new Motoboy(1600,"Entregar a pizza","Fernando");
+        this.pizzaiolo= new Pizzaiolo(1700,"Preparador de pizzas","Barmelon");
+
     }
     public void verInformacoes (){
         System.out.println("O nome da pizzaria é "+getNome()+", o endereço da pizzaria é "+getEndereco()+", o atual caixa da pizzaria é "+getCaixa()+"\nA quantidade de pizzas" +
                 ": "+getEstoquePizza()+", a quantidade de bebidas: "+getEstoqueBebida()+", a quantidade de sobremesas: "+getEstoqueSobremesa());
+    }
+    public void verFuncionarios(){
+        System.out.println("\nPara atendente temos a funcionária: "+atendente.getNome()+", com o salario de "+atendente.getSalario()+", possuindo de funcionalidade "+atendente.getFuncao()+" como comissão: ");
+        atendente.receberComissao();
+        System.out.println("\nPara motoboy temos o funcionário"+motoboy.getNome()+", com salario de "+motoboy.getFuncao()+", possuindo de funcionalidade "+atendente.getFuncao()+" como comissão: ");
+        motoboy.receberComissao();
+        System.out.println("\nPara garçom temos o funcionário"+garcom.getNome()+", com o salario de"+garcom.getSalario()+", possuindo de funcionalidade "+garcom.getFuncao()+" como comissão: ");
+        garcom.receberComissao();
+        System.out.println("\nPara pizzaiolo temos o funcionário"+pizzaiolo.getNome()+", com o salario de"+pizzaiolo.getSalario()+", possuindo de funcionalidade "+pizzaiolo.getFuncao()+" como comissão: ");
+        pizzaiolo.receberComissao();
     }
 
 
     public void atenderCliente() {
         Scanner scanner = new Scanner(System.in);
         String nomeCliente, tipoCliente;
+        System.out.println("Pedido recebido pela atendente "+atendente.getNome());
         System.out.println("Digite seu nome: ");
         nomeCliente = scanner.nextLine();
 
@@ -98,6 +118,7 @@ public class Pizzaria {
                 }
                 cliente.receberConta(calabresa.calcularPreco());
                 System.out.println("Pedido realizado: " + calabresa.getItem() + " x" + qtd);
+                System.out.println("Pizza feita pelo pizzaiolo "+pizzaiolo.getNome());
                 break;
             case 2:
                 Pedido margherita = new Pedido("Pizza de Margherita", cliente, 30, qtd);
@@ -110,6 +131,7 @@ public class Pizzaria {
                 }
                 cliente.receberConta(margherita.calcularPreco());
                 System.out.println("Pedido realizado: " + margherita.getItem() + " x" + qtd);
+                System.out.println("Pizza feita pelo pizzaiolo "+pizzaiolo.getNome());
                 break;
             case 3:
                 Pedido mussarela = new Pedido("Pizza de Muçarela", cliente, 28, qtd);
@@ -122,6 +144,7 @@ public class Pizzaria {
                 }
                 cliente.receberConta(mussarela.calcularPreco());
                 System.out.println("Pedido realizado: " + mussarela.getItem() + " x" + qtd);
+                System.out.println("Pizza feita pelo pizzaiolo "+pizzaiolo.getNome());
                 break;
             case 4:
                 Pedido refrigerante = new Pedido("Refrigerante", cliente, 5, qtd);
@@ -207,7 +230,10 @@ public class Pizzaria {
             }
             if (cliente instanceof ClienteVirtual) {
                 cliente.setDivida(cliente.getDivida()+this.taxaEntrega);
-                System.out.println("A taxa de entrega de R$"+this.getTaxaEntrega()+",00 foi adicionada");
+                System.out.println("A taxa de entrega de R$"+this.getTaxaEntrega()+",00 foi adicionada"+"\nQuem entregará será o motoboy "+motoboy.getNome());
+            }
+            if (cliente instanceof ClienteFisico){
+                System.out.println("Quem enviará a pizza será o garçom "+garcom.getNome());
             }
             do {
                 System.out.println("O total a pagar é R$" + cliente.getDivida() + ". Digite 1 para pagar:");
