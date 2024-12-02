@@ -34,13 +34,13 @@ public class Pizzaria {
             System.out.print("Digite seu endereço para entrega: ");
             String enderecoEntrega = scanner.nextLine();
             ClienteVirtual cliente = new ClienteVirtual(nomeCliente, this, enderecoEntrega);
-            apresentarMenu(cliente);
+            escolherItem(cliente);
         } else {
             ClienteFisico cliente = new ClienteFisico(nomeCliente, this);
-            apresentarMenu(cliente);
+            escolherItem(cliente);
         }
     }
-    private void apresentarMenu(Cliente cliente) {
+    private void escolherItem(Cliente cliente) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Olá, " + cliente.getNome() + ", seja bem-vindo(a) à "+this.getNome()+"!");
 
