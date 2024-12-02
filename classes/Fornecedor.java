@@ -14,16 +14,12 @@ public class Fornecedor {
     }
     //Métodos
     public int Demanda(int qnt) {
-        Random random = new Random();
-        int produto;
         int valor;
-        produto = random.nextInt((qnt));
-
         System.out.println("O fornecedor analisou a demanda e calculou o preço considerando a quantidade no" +
                 "estoque");
-        valor =calcularPreco(produto);
-        System.out.println("O fornecedor possui no estoque "+produto+" o preço ficara no total R$"+valor+".");
-        System.out.println("O fornecedor está enviando "+tipoProduto);
+        valor =calcularPreco(qnt);
+        System.out.println("O fornecedor analisou o pedido de "+qnt+" e o preço ficara no total R$"+valor+".");
+        System.out.println("O fornecedor está enviando as caixas de "+tipoProduto);
         return valor;
     }
     public int calcularPreco (int qnt) {
