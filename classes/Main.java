@@ -26,22 +26,7 @@ public class Main {
             }
             // Gestor Cod
             if (saida==2) {
-                do {
-                    do {
-                        System.out.println("Olá gestor da pizzaria " + pizzaria.getNome() + " escolha o quê gostaria de fazer" +
-                                "\n1_Ver informações\n2_Pedir demanda\n3_Dar bonus(Funcionario)\n4_Sair");
-                        escolha = scanner.nextInt();
-                    } while (escolha < 1 || escolha > 4);
-                    if (escolha == 1) {
-                        pizzaria.verInformacoes();
-                    }
-                    if (escolha == 2) {
-                       gestorPizzaria.fazerDemanda();
-                    }
-                    if (escolha == 3) {
-                        pizzaria.pagarFuncionario();
-                    }
-                } while (escolha != 4);
+                gestorPizzaria.gerir();
             }
         }while (saida!=3);
 
