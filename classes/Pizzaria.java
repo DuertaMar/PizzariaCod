@@ -25,11 +25,11 @@ public class Pizzaria {
         String nomeCliente, tipoCliente;
         System.out.println("Digite seu nome: ");
         nomeCliente = scanner.nextLine();
-
-        System.out.println("Que tipo de cliente você é? Digite 'F' para cliente físico " +
-                "ou 'V' para cliente virtual.");
-        tipoCliente = scanner.nextLine().toUpperCase();
-
+        do {
+            System.out.println("Que tipo de cliente você é? Digite 'F' para cliente físico " +
+                    "ou 'V' para cliente virtual.");
+            tipoCliente = scanner.nextLine().toUpperCase();
+        } while (!tipoCliente.equals("V")&&!tipoCliente.equals("F"));
         if (tipoCliente.equals("V")) {
             System.out.print("Digite seu endereço para entrega: ");
             String enderecoEntrega = scanner.nextLine();
