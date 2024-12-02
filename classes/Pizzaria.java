@@ -39,20 +39,17 @@ public class Pizzaria {
         pizzaiolo.receberComissao();
     }
 
-
     public void atenderCliente() {
         Scanner scanner = new Scanner(System.in);
         String nomeCliente, tipoCliente;
         System.out.println("Pedido recebido pela atendente "+atendente.getNome());
         System.out.println("Digite seu nome: ");
         nomeCliente = scanner.nextLine();
-
-
-
-        System.out.println("Que tipo de cliente você é? Digite 'F' para cliente físico " +
-                "ou 'V' para cliente virtual.");
-        tipoCliente = scanner.nextLine().toUpperCase();
-
+        do {
+            System.out.println("Que tipo de cliente você é? Digite 'F' para cliente físico " +
+                    "ou 'V' para cliente virtual.");
+            tipoCliente = scanner.nextLine().toUpperCase();
+        } while (!tipoCliente.equals("V")&&!tipoCliente.equals("F"));
         if (tipoCliente.equals("V")) {
             System.out.print("Digite seu endereço para entrega: ");
             String enderecoEntrega = scanner.nextLine();
@@ -112,7 +109,7 @@ public class Pizzaria {
                 if(this.getEstoquePizza() > 0) {
                     this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
-                else if(this.getEstoquePizza() == 0) {
+                else if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
@@ -125,7 +122,7 @@ public class Pizzaria {
                 if(this.getEstoquePizza() > 0) {
                     this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
-                else if(this.getEstoquePizza() == 0) {
+                else if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
@@ -138,7 +135,7 @@ public class Pizzaria {
                 if(this.getEstoquePizza() > 0) {
                     this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
-                else if(this.getEstoquePizza() == 0) {
+                else if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
@@ -151,7 +148,7 @@ public class Pizzaria {
                 if(this.getEstoqueBebida() > 0) {
                     this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
-                else if(this.getEstoqueBebida() == 0) {
+                else if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
@@ -163,7 +160,7 @@ public class Pizzaria {
                 if(this.getEstoqueBebida() > 0) {
                     this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
-                else if(this.getEstoqueBebida() == 0) {
+                else if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
@@ -175,7 +172,7 @@ public class Pizzaria {
                 if(this.getEstoqueBebida() > 0) {
                     this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
-                else if(this.getEstoqueBebida() == 0) {
+                else if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
@@ -187,7 +184,7 @@ public class Pizzaria {
                 if(this.getEstoqueSobremesa() > 0) {
                     this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
-                else if(this.getEstoqueSobremesa() == 0) {
+                else if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
@@ -199,7 +196,7 @@ public class Pizzaria {
                 if(this.getEstoqueSobremesa() > 0) {
                     this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
-                else if(this.getEstoqueSobremesa() == 0) {
+                else if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
@@ -211,7 +208,7 @@ public class Pizzaria {
                 if(this.getEstoqueSobremesa() > 0) {
                     this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
-                else if(this.getEstoqueSobremesa() == 0) {
+                else if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
                 }
