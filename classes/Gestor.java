@@ -1,7 +1,6 @@
 public class Gestor {
     private Pizzaria pizzaria;
 
-
     public Gestor(Pizzaria pizzaria) {
         this.pizzaria = pizzaria;
     }

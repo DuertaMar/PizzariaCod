@@ -10,10 +10,10 @@ public class Pizzaria {
     private int estoqueSobremesa = 10;
     private int taxaEntrega = 10;
 
-    public Pizzaria() {
-        this.nome = "Nome da Pizzaria";
-        this.endereco = "Rua da Pizzaria";
-        this.caixa = 0;
+    public Pizzaria(String nome, String endereco, int caixa) {
+        this.setNome(nome);
+        this.setEndereco(endereco);
+        this.setCaixa(caixa);
     }
     public void verInformacoes (){
         System.out.println("O nome da pizzaria é "+getNome()+".\nO endereço da pizzaria é "+getEndereco()+".\nO atual caixa da pizzaria é "+getCaixa()+"\nA quantidade de pizzas" +
@@ -64,7 +64,6 @@ public class Pizzaria {
         receberPagamento(cliente);
     }
 
-
     private void exibirMenu() {
         System.out.println("----- Menu da Pizzaria -----");
         System.out.println("Pizzas:");
@@ -88,7 +87,7 @@ public class Pizzaria {
             case 1:
                 Pedido calabresa = new Pedido("Pizza de Calabresa", cliente, 35, qtd);
                 if(this.getEstoquePizza() > 0) {
-                    this.setEstoquePizza(this.getEstoquePizza()-1);
+                    this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
                 else if(this.getEstoquePizza() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -100,7 +99,7 @@ public class Pizzaria {
             case 2:
                 Pedido margherita = new Pedido("Pizza de Margherita", cliente, 30, qtd);
                 if(this.getEstoquePizza() > 0) {
-                    this.setEstoquePizza(this.getEstoquePizza()-1);
+                    this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
                 else if(this.getEstoquePizza() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -112,7 +111,7 @@ public class Pizzaria {
             case 3:
                 Pedido mussarela = new Pedido("Pizza de Muçarela", cliente, 28, qtd);
                 if(this.getEstoquePizza() > 0) {
-                    this.setEstoquePizza(this.getEstoquePizza()-1);
+                    this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
                 else if(this.getEstoquePizza() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -124,7 +123,7 @@ public class Pizzaria {
             case 4:
                 Pedido refrigerante = new Pedido("Refrigerante", cliente, 5, qtd);
                 if(this.getEstoqueBebida() > 0) {
-                    this.setEstoqueBebida(this.getEstoqueBebida()-1);
+                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
                 else if(this.getEstoqueBebida() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -136,7 +135,7 @@ public class Pizzaria {
             case 5:
                 Pedido suco = new Pedido("Suco", cliente, 7, qtd);
                 if(this.getEstoqueBebida() > 0) {
-                    this.setEstoqueBebida(this.getEstoqueBebida()-1);
+                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
                 else if(this.getEstoqueBebida() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -148,7 +147,7 @@ public class Pizzaria {
             case 6:
                 Pedido agua = new Pedido("Água", cliente, 3, qtd);
                 if(this.getEstoqueBebida() > 0) {
-                    this.setEstoqueBebida(this.getEstoqueBebida()-1);
+                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
                 else if(this.getEstoqueBebida() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -160,7 +159,7 @@ public class Pizzaria {
             case 7:
                 Pedido pudim = new Pedido("Pudim", cliente, 10, qtd);
                 if(this.getEstoqueSobremesa() > 0) {
-                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-1);
+                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
                 else if(this.getEstoqueSobremesa() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -172,7 +171,7 @@ public class Pizzaria {
             case 8:
                 Pedido brownie = new Pedido("Brownie", cliente, 12, qtd);
                 if(this.getEstoqueSobremesa() > 0) {
-                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-1);
+                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
                 else if(this.getEstoqueSobremesa() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -184,7 +183,7 @@ public class Pizzaria {
             case 9:
                 Pedido sorvete = new Pedido("Sorvete", cliente, 8, qtd);
                 if(this.getEstoqueSobremesa() > 0) {
-                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-1);
+                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
                 else if(this.getEstoqueSobremesa() == 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
@@ -222,7 +221,6 @@ public class Pizzaria {
         }
     }
 
-
     public void pedirDemanda () {
         Scanner scanner = new Scanner(System.in);
         int escolha, qnt;
@@ -239,7 +237,6 @@ public class Pizzaria {
                 System.out.println("1_Pizzas\n2_Bebidas, Sucos\n3_Sobremesas");
                 escolha = scanner.nextInt();
             } while (escolha<1|escolha>3);
-
             if (escolha == 1){
                 do {
                     System.out.println("Os fornecedores são: " +
@@ -253,12 +250,11 @@ public class Pizzaria {
                     qnt = scanner.nextInt();
                 } while(qnt*fornecedor1.getPreco()>getCaixa()||qnt*fornecedor2.getPreco()>getCaixa());
                 if (escolha == 1){
-                    setCaixa(getCaixa()-fornecedor1.Demanda(qnt));
+                    this.setCaixa(getCaixa()-fornecedor1.Demanda(qnt));
                 } else {
-                    setCaixa(getCaixa()-fornecedor2.Demanda(qnt));
+                    this.setCaixa(getCaixa()-fornecedor2.Demanda(qnt));
                 }
-
-
+                this.setEstoquePizza(this.getEstoquePizza()+qnt);
             } else if (escolha==2) {
                 do {
                     System.out.println("Os fornecedores são: " +
@@ -268,8 +264,6 @@ public class Pizzaria {
                     escolha = scanner.nextInt();
                 } while (escolha<1||escolha>2);
                 do {
-
-
                     System.out.println("Agora escolha a quantidade.\nLembrar da quantidade disponivel em caixa que atualmente é R$" + getCaixa());
                     qnt = scanner.nextInt();
                 } while(qnt*fornecedor3.getPreco()>getCaixa()||qnt*fornecedor4.getPreco()>getCaixa());
@@ -278,7 +272,7 @@ public class Pizzaria {
                 } else {
                     setCaixa(getCaixa()-fornecedor4.Demanda(qnt));
                 }
-
+                this.setEstoqueBebida(this.getEstoqueBebida()+qnt);
             } else {
                 do {
                     System.out.println("Os fornecedores são: " +
@@ -288,8 +282,6 @@ public class Pizzaria {
                     escolha = scanner.nextInt();
                 } while (escolha<1||escolha>2);
                 do {
-
-
                     System.out.println("Agora escolha a quantidade.\nLembrar da quantidade disponivel em caixa que atualmente é R$" + getCaixa());
                     qnt = scanner.nextInt();
                 } while(qnt*fornecedor5.getPreco()>getCaixa()||qnt*fornecedor6.getPreco()>getCaixa());
@@ -298,7 +290,7 @@ public class Pizzaria {
                 } else {
                     setCaixa(getCaixa()-fornecedor6.Demanda(qnt));
                 }
-
+                this.setEstoqueSobremesa(this.getEstoqueSobremesa()+qnt);
             }
         } else {
             System.out.println("A pizzaria está sem dinheiro, atualmente para demandas.");
@@ -314,8 +306,6 @@ public class Pizzaria {
     public void pagarFuncionario() {
         System.out.println("A pizzaria "+getNome()+" está pagando os funcionários");
     }
-
-
 
     public String getNome() {
         return nome;
