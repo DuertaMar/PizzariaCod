@@ -106,12 +106,11 @@ public class Pizzaria {
         switch (comando) {
             case 1:
                 Pedido calabresa = new Pedido("Pizza de Calabresa", cliente, 35, qtd);
-                if(this.getEstoquePizza() > 0) {
-                    this.setEstoquePizza(this.getEstoquePizza()-qtd);
-                }
-                else if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
+                if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoquePizza() > 0) {
+                this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
                 cliente.receberConta(calabresa.calcularPreco());
                 System.out.println("Pedido realizado: " + calabresa.getItem() + " x" + qtd);
@@ -119,12 +118,11 @@ public class Pizzaria {
                 break;
             case 2:
                 Pedido margherita = new Pedido("Pizza de Margherita", cliente, 30, qtd);
-                if(this.getEstoquePizza() > 0) {
-                    this.setEstoquePizza(this.getEstoquePizza()-qtd);
-                }
-                else if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
+                if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoquePizza() > 0) {
+                this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
                 cliente.receberConta(margherita.calcularPreco());
                 System.out.println("Pedido realizado: " + margherita.getItem() + " x" + qtd);
@@ -132,12 +130,11 @@ public class Pizzaria {
                 break;
             case 3:
                 Pedido mussarela = new Pedido("Pizza de Muçarela", cliente, 28, qtd);
-                if(this.getEstoquePizza() > 0) {
-                    this.setEstoquePizza(this.getEstoquePizza()-qtd);
-                }
-                else if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
+                if(this.getEstoquePizza() == 0 || this.getEstoquePizza()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoquePizza() > 0) {
+                    this.setEstoquePizza(this.getEstoquePizza()-qtd);
                 }
                 cliente.receberConta(mussarela.calcularPreco());
                 System.out.println("Pedido realizado: " + mussarela.getItem() + " x" + qtd);
@@ -145,72 +142,66 @@ public class Pizzaria {
                 break;
             case 4:
                 Pedido refrigerante = new Pedido("Refrigerante", cliente, 5, qtd);
-                if(this.getEstoqueBebida() > 0) {
-                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
-                }
-                else if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
+                if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoqueBebida() > 0) {
+                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
                 cliente.receberConta(refrigerante.calcularPreco());
                 System.out.println("Pedido realizado: " + refrigerante.getItem() + " x" + qtd);
                 break;
             case 5:
                 Pedido suco = new Pedido("Suco", cliente, 7, qtd);
-                if(this.getEstoqueBebida() > 0) {
-                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
-                }
-                else if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
+                if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoqueBebida() > 0) {
+                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
                 cliente.receberConta(suco.calcularPreco());
                 System.out.println("Pedido realizado: " + suco.getItem() + " x" + qtd);
                 break;
             case 6:
                 Pedido agua = new Pedido("Água", cliente, 3, qtd);
-                if(this.getEstoqueBebida() > 0) {
-                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
-                }
-                else if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
+                if(this.getEstoqueBebida() == 0 || this.getEstoqueBebida()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoqueBebida() > 0) {
+                    this.setEstoqueBebida(this.getEstoqueBebida()-qtd);
                 }
                 cliente.receberConta(agua.calcularPreco());
                 System.out.println("Pedido realizado: " + agua.getItem() + " x" + qtd);
                 break;
             case 7:
                 Pedido pudim = new Pedido("Pudim", cliente, 10, qtd);
-                if(this.getEstoqueSobremesa() > 0) {
-                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
-                }
-                else if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
+                if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoqueSobremesa() > 0) {
+                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
                 cliente.receberConta(pudim.calcularPreco());
                 System.out.println("Pedido realizado: " + pudim.getItem() + " x" + qtd);
                 break;
             case 8:
                 Pedido brownie = new Pedido("Brownie", cliente, 12, qtd);
-                if(this.getEstoqueSobremesa() > 0) {
-                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
-                }
-                else if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
+                if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoqueSobremesa() > 0) {
+                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
                 cliente.receberConta(brownie.calcularPreco());
                 System.out.println("Pedido realizado: " + brownie.getItem() + " x" + qtd);
                 break;
             case 9:
                 Pedido sorvete = new Pedido("Sorvete", cliente, 8, qtd);
-                if(this.getEstoqueSobremesa() > 0) {
-                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
-                }
-                else if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
+                if(this.getEstoqueSobremesa() == 0 || this.getEstoqueSobremesa()-qtd < 0) {
                     System.out.println("Estoque insuficiente, faça o gerenciamento da pizzaria");
                     break;
+                } else if(this.getEstoqueSobremesa() > 0) {
+                    this.setEstoqueSobremesa(this.getEstoqueSobremesa()-qtd);
                 }
                 cliente.receberConta(sorvete.calcularPreco());
                 System.out.println("Pedido realizado: " + sorvete.getItem() + " x" + qtd);
