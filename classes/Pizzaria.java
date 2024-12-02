@@ -29,13 +29,13 @@ public class Pizzaria {
                 ": "+getEstoquePizza()+", a quantidade de bebidas: "+getEstoqueBebida()+", a quantidade de sobremesas: "+getEstoqueSobremesa());
     }
     public void verFuncionarios(){
-        System.out.println("\nPara atendente temos a funcionária: "+atendente.getNome()+", com o salario de "+atendente.getSalario()+", possuindo de funcionalidade "+atendente.getFuncao()+" como comissão: ");
+        System.out.println("\nPara atendente temos a funcionária: "+atendente.getNome()+", com o salario de R$"+atendente.getSalario()+", possuindo de funcionalidade "+atendente.getFuncao()+" como comissão: ");
         atendente.receberComissao();
-        System.out.println("\nPara motoboy temos o funcionário"+motoboy.getNome()+", com salario de "+motoboy.getFuncao()+", possuindo de funcionalidade "+atendente.getFuncao()+" como comissão: ");
+        System.out.println("\nPara motoboy temos o funcionário"+motoboy.getNome()+", com salario de R$"+motoboy.getFuncao()+", possuindo de funcionalidade "+atendente.getFuncao()+" como comissão: ");
         motoboy.receberComissao();
-        System.out.println("\nPara garçom temos o funcionário"+garcom.getNome()+", com o salario de"+garcom.getSalario()+", possuindo de funcionalidade "+garcom.getFuncao()+" como comissão: ");
+        System.out.println("\nPara garçom temos o funcionário"+garcom.getNome()+", com o salario de R$"+garcom.getSalario()+", possuindo de funcionalidade "+garcom.getFuncao()+" como comissão: ");
         garcom.receberComissao();
-        System.out.println("\nPara pizzaiolo temos o funcionário"+pizzaiolo.getNome()+", com o salario de"+pizzaiolo.getSalario()+", possuindo de funcionalidade "+pizzaiolo.getFuncao()+" como comissão: ");
+        System.out.println("\nPara pizzaiolo temos o funcionário"+pizzaiolo.getNome()+", com o salario de R$"+pizzaiolo.getSalario()+", possuindo de funcionalidade "+pizzaiolo.getFuncao()+" como comissão: ");
         pizzaiolo.receberComissao();
     }
 
