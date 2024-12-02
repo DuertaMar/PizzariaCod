@@ -5,7 +5,7 @@ public class Atendente extends Funcionario{
 
     @Override
     void receberComissao() {
-        System.out.println("A comissão extra da funcionária é considerando aquantidade de pedidos registrados" +
+        System.out.println("A comissão extra da atendente é considerando quantidade de pedidos registrados" +
                 " e pelo respeito aos clientes");
 
     }

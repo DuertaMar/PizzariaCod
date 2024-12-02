@@ -24,14 +24,9 @@ public class Main {
             if (saida == 1) {
                 pizzaria.atenderCliente();
             }
-            // Gestor Cod
             if (saida==2) {
                 gestorPizzaria.gerir();
             }
         }while (saida!=3);
-
-        //A main vai ser o gestor e o cliente ao mesmo tempo, quando a pizza, sobremesa, ou bebida for menor que um determinado valor
-        // ele troca para gestor, para pedir as demandas e oq tiver, e quando recuperar ele votla a ser cliente;
-        // teria que ver como funcionaria os relacionamentos entre os códigos e os outros códigos e as trocas
     }
 }

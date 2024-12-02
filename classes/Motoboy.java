@@ -5,7 +5,7 @@ public class Motoboy extends Funcionario{
 
     @Override
     void receberComissao() {
-        System.out.println("A comissão extra do funcionário é feito pela quantidade de pedidos entregues" +
+        System.out.println("A comissão extra do motoboy é feito pela quantidade de pedidos entregues" +
                 " e se o cliente querer dar uma gorjeta na entrega.");
 
     }

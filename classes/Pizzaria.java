@@ -18,10 +18,10 @@ public class Pizzaria {
         this.setNome(nome);
         this.setEndereco(endereco);
         this.setCaixa(caixa);
-        this.atendente = new Atendente(1600,"Atendente on-line e fisico", "Adriana");
-        this.garcom = new Garcom(1450,"Direcionar e receber clientes fisicos","Juninho");
-        this.motoboy = new Motoboy(1600,"Entregar a pizza","Fernando");
-        this.pizzaiolo= new Pizzaiolo(1700,"Preparador de pizzas","Barmelon");
+        this.atendente = new Atendente(1600,"atender on-line e fisico", "Adriana");
+        this.garcom = new Garcom(1450,"direcionar e receber clientes fisicos","Juninho");
+        this.motoboy = new Motoboy(1600,"entregar os pedidos virtuais","Fernando");
+        this.pizzaiolo= new Pizzaiolo(1700,"preparar as pizzas","Barmelon");
 
     }
     public void verInformacoes (){
@@ -29,13 +29,13 @@ public class Pizzaria {
                 ": "+getEstoquePizza()+", a quantidade de bebidas: "+getEstoqueBebida()+", a quantidade de sobremesas: "+getEstoqueSobremesa());
     }
     public void verFuncionarios(){
-        System.out.println("\nPara atendente temos a funcionária: "+atendente.getNome()+", com o salario de R$"+atendente.getSalario()+", possuindo de funcionalidade "+atendente.getFuncao()+" como comissão: ");
+        System.out.println("\nPara atendente temos a funcionária: "+atendente.getNome()+", com o salario de R$"+atendente.getSalario()+", possuindo de funcionalidade "+atendente.getFuncao());
         atendente.receberComissao();
-        System.out.println("\nPara motoboy temos o funcionário"+motoboy.getNome()+", com salario de R$"+motoboy.getFuncao()+", possuindo de funcionalidade "+atendente.getFuncao()+" como comissão: ");
+        System.out.println("\nPara motoboy temos o funcionário: "+motoboy.getNome()+", com salario de R$"+motoboy.getSalario()+", possuindo de funcionalidade "+motoboy.getFuncao());
         motoboy.receberComissao();
-        System.out.println("\nPara garçom temos o funcionário"+garcom.getNome()+", com o salario de R$"+garcom.getSalario()+", possuindo de funcionalidade "+garcom.getFuncao()+" como comissão: ");
+        System.out.println("\nPara garçom temos o funcionário: "+garcom.getNome()+", com o salario de R$"+garcom.getSalario()+", possuindo de funcionalidade "+garcom.getFuncao());
         garcom.receberComissao();
-        System.out.println("\nPara pizzaiolo temos o funcionário"+pizzaiolo.getNome()+", com o salario de R$"+pizzaiolo.getSalario()+", possuindo de funcionalidade "+pizzaiolo.getFuncao()+" como comissão: ");
+        System.out.println("\nPara pizzaiolo temos o funcionário: "+pizzaiolo.getNome()+", com o salario de R$"+pizzaiolo.getSalario()+", possuindo de funcionalidade "+pizzaiolo.getFuncao());
         pizzaiolo.receberComissao();
     }
 

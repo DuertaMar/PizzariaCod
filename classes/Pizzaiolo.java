@@ -5,7 +5,7 @@ public class Pizzaiolo extends Funcionario{
 
     @Override
     void receberComissao() {
-        System.out.println("A comissão do funcionario é considerando a quantidade de pizzas feitas e " +
+        System.out.println("A comissão do pizzaiolo é considerando a quantidade de pizzas feitas e " +
                 "a quantidade de elogios dos clientes para a pizza.");
 
     }
