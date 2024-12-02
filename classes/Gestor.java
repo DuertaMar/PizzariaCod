@@ -16,8 +16,8 @@ public class Gestor {
         int escolha;
         do {
             do {
-                System.out.println("Olá gestor da pizzaria " + pizzaria.getNome() + " escolha o quê gostaria de fazer" +
-                        "\n1_Ver informações\n2_Pedir demanda\n3_Dar bonus(Funcionario)\n4_Sair");
+                System.out.println("Olá gestor da pizzaria " + pizzaria.getNome() + " escolha." +
+                        "\n1_Ver informações\n2_Pedir demanda\n3_Dar bônus aos funcionário\n4_Sair");
                 escolha = scanner.nextInt();
             } while (escolha < 1 || escolha > 4);
             if (escolha == 1) {

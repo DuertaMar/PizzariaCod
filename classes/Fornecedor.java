@@ -15,16 +15,13 @@ public class Fornecedor {
     //Métodos
     public int Demanda(int qnt) {
         int valor;
-        System.out.println("O fornecedor analisou a demanda e calculou o preço considerando a quantidade no" +
-                "estoque");
         valor =calcularPreco(qnt);
-        System.out.println("O fornecedor analisou o pedido de "+qnt+" e o preço ficara no total R$"+valor+".");
-        System.out.println("O fornecedor está enviando as caixas de "+tipoProduto);
+        System.out.println("O fornecedor analisou o pedido com quantidade de "+qnt+" e o preço ficara no total R$"+valor+".");
+        System.out.println("O fornecedor está enviando as caixas de "+getTipoProduto());
         return valor;
     }
     public int calcularPreco (int qnt) {
-        int valor = this.preco*qnt;
-        return valor;
+        return (getPreco()*qnt);
     }
 
     //Get e Set

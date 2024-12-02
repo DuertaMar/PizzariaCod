@@ -19,7 +19,7 @@ public class Main {
         gestorPizzaria = new Gestor(pizzaria);
 
         do {
-            System.out.println("O quê gostaria de fazer na pizzaria\n1_Cliente\n2_Gestor\n3_Sair");
+            System.out.println("\nO quê gostaria de fazer na pizzaria\n1_Cliente\n2_Gestor\n3_Sair");
             saida = scanner.nextInt();
             if (saida == 1) {
                 pizzaria.atenderCliente();

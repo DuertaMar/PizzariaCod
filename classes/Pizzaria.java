@@ -16,8 +16,8 @@ public class Pizzaria {
         this.setCaixa(caixa);
     }
     public void verInformacoes (){
-        System.out.println("O nome da pizzaria é "+getNome()+".\nO endereço da pizzaria é "+getEndereco()+".\nO atual caixa da pizzaria é "+getCaixa()+"\nA quantidade de pizzas" +
-                ": "+getEstoquePizza()+"\nA quantidade de bebidas: "+getEstoqueBebida()+"\nA quantidade de sobremesas: "+getEstoqueSobremesa());
+        System.out.println("O nome da pizzaria é "+getNome()+", o endereço da pizzaria é "+getEndereco()+", o atual caixa da pizzaria é "+getCaixa()+"\nA quantidade de pizzas" +
+                ": "+getEstoquePizza()+", a quantidade de bebidas: "+getEstoqueBebida()+", a quantidade de sobremesas: "+getEstoqueSobremesa());
     }
 
 
@@ -26,6 +26,9 @@ public class Pizzaria {
         String nomeCliente, tipoCliente;
         System.out.println("Digite seu nome: ");
         nomeCliente = scanner.nextLine();
+
+
+
         System.out.println("Que tipo de cliente você é? Digite 'F' para cliente físico " +
                 "ou 'V' para cliente virtual.");
         tipoCliente = scanner.nextLine().toUpperCase();
@@ -206,16 +209,18 @@ public class Pizzaria {
                 cliente.setDivida(cliente.getDivida()+this.taxaEntrega);
                 System.out.println("A taxa de entrega de R$"+this.getTaxaEntrega()+",00 foi adicionada");
             }
-            System.out.println("O total a pagar é R$" + cliente.getDivida() + ". Digite 1 para pagar:");
-            int comando = scanner.nextInt();
+            do {
+                System.out.println("O total a pagar é R$" + cliente.getDivida() + ". Digite 1 para pagar:");
+                int comando = scanner.nextInt();
 
-            if (comando == 1) {
-                this.caixa += cliente.getDivida();
-                cliente.setDivida(0);
-                System.out.println(cliente.getNome() + ", pagamento realizado com sucesso! Volte mais vezes");
-            } else {
-                System.out.println("Pagamento não realizado. Dívida pendente: R$" + cliente.getDivida());
-            }
+                if (comando == 1) {
+                    this.caixa += cliente.getDivida();
+                    cliente.setDivida(0);
+                    System.out.println(cliente.getNome() + ", pagamento realizado com sucesso! Volte mais vezes");
+                } else {
+                    System.out.println("Pagamento não realizado. Dívida pendente: R$" + cliente.getDivida());
+                }
+            } while (cliente.getDivida()!=0);
         } else {
             System.out.println("Nenhuma dívida a pagar.");
         }
@@ -304,7 +309,7 @@ public class Pizzaria {
     }
 
     public void pagarFuncionario() {
-        System.out.println("A pizzaria "+getNome()+" está pagando os funcionários");
+        System.out.println("A pizzaria "+getNome()+" deu bônus aos funcionários");
     }
 
     public String getNome() {
