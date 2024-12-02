@@ -1,7 +1,6 @@
 public class ClienteVirtual extends Cliente{
     private String endereco;
     private int tempoEntrega;
-    private int divida;
 
     public ClienteVirtual(String nome, Pizzaria pizzaria, String enderecoEntrega) {
         super(nome);
@@ -9,8 +8,8 @@ public class ClienteVirtual extends Cliente{
         this.tempoEntrega = pizzaria.calcularTempoEntrega();
     }
     public void receberConta(int valor) {
-        this.divida += valor;
-        System.out.println("Conta atual: R$" + this.divida);
+        this.setDivida(this.getDivida()+valor);
+        System.out.println("Conta atual: R$" + this.getDivida());
     }
     public String getEndereco() {
         return endereco;
@@ -23,11 +22,5 @@ public class ClienteVirtual extends Cliente{
     }
     public void setTempoEntrega(int tempoEntrega) {
         this.tempoEntrega = tempoEntrega;
-    }
-    public int getDivida() {
-        return divida;
-    }
-    public void setDivida(int divida) {
-        this.divida = divida;
     }
 }
