@@ -16,10 +16,10 @@ public class Gestor {
         int escolha;
         do {
             do {
-                System.out.println("Olá gestor da pizzaria " + pizzaria.getNome() + " escolha." +
+                System.out.println("\nOlá gestor da pizzaria " + pizzaria.getNome() + " escolha." +
                         "\n1_Ver informações\n2_Pedir demanda\n3_Dar bônus aos funcionário\n4_Ver Funcionários\n5_Sair");
                 escolha = scanner.nextInt();
-            } while (escolha < 1 || escolha > 4);
+            } while (escolha < 1 || escolha > 5);
             if (escolha == 1) {
                 pizzaria.verInformacoes();
             }
@@ -32,7 +32,7 @@ public class Gestor {
             if (escolha == 4) {
                 pizzaria.verFuncionarios();
             }
-        } while (escolha != 4);
+        } while (escolha != 5);
     }
 
     public Pizzaria getPizzaria() {

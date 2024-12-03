@@ -244,12 +244,12 @@ public class Pizzaria {
         Scanner scanner = new Scanner(System.in);
         int escolha, qnt;
         Random random = new Random();
-        Fornecedor fornecedor1 = new Fornecedor("PizzaPrima", random.nextInt(21),"Pizzas");
-        Fornecedor fornecedor2 = new Fornecedor("PizzaMateria", random.nextInt(21),"Pizzas");
-        Fornecedor fornecedor3 = new Fornecedor("BebidasLighs", random.nextInt(10),"Bebidas");
-        Fornecedor fornecedor4 = new Fornecedor("SucosNatural", random.nextInt(10),"Sucos");
-        Fornecedor fornecedor5 = new Fornecedor("SobreHoje", random.nextInt(14),"Sobremesas");
-        Fornecedor fornecedor6 = new Fornecedor("SobreGelados", random.nextInt(14),"Sobremesas");
+        Fornecedor fornecedor1 = new Fornecedor("PizzaPrima",(1+random.nextInt(21)),"Pizzas");
+        Fornecedor fornecedor2 = new Fornecedor("PizzaMateria",(1+ random.nextInt(21)),"Pizzas");
+        Fornecedor fornecedor3 = new Fornecedor("BebidasLighs",(1+random.nextInt(10)),"Bebidas");
+        Fornecedor fornecedor4 = new Fornecedor("SucosNatural",(1+random.nextInt(10)),"Sucos");
+        Fornecedor fornecedor5 = new Fornecedor("SobreHoje",(1+random.nextInt(14)),"Sobremesas");
+        Fornecedor fornecedor6 = new Fornecedor("SobreGelados",(1+random.nextInt(14)),"Sobremesas");
         if (this.caixa > 0) {
             do {
                 System.out.println("A pizzaria está precisando de que tipo de demanda? pressione o valor entre 1 a 3.");

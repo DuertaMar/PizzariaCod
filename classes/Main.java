@@ -7,12 +7,16 @@ public class Main {
         String nomePizzaria, endereco;
         int caixa, escolha, saida;
 
-        System.out.println("Definindo o nome da pizzaria");
+        System.out.println("Definindo o nome da pizzaria.");
         nomePizzaria=scanner.nextLine();
-        System.out.println("Defina o caixa incial");
-        caixa=scanner.nextInt();
+        do {
+
+
+            System.out.println("Defina o caixa incial, caixa maior ou igual a 0.");
+            caixa = scanner.nextInt();
+        } while (caixa<0);
         scanner.nextLine();
-        System.out.println("Defina o endereço da pizzaria");
+        System.out.println("Defina o endereço da pizzaria.");
         endereco=scanner.nextLine();
         Pizzaria pizzaria = new Pizzaria(nomePizzaria, endereco, caixa);
 
