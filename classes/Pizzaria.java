@@ -267,7 +267,7 @@ public class Pizzaria {
                 do {
                     System.out.println("Agora escolha a quantidade.\nLembrar da quantidade disponivel em caixa que atualmente é R$" + getCaixa());
                     qnt = scanner.nextInt();
-                } while(qnt*fornecedor1.getPreco()>getCaixa()||qnt*fornecedor2.getPreco()>getCaixa());
+                } while(qnt*fornecedor1.getPreco()>getCaixa()||qnt*fornecedor2.getPreco()>getCaixa()||qnt*fornecedor1.getPreco()<1||qnt*fornecedor2.getPreco()<1);
                 if (escolha == 1){
                     this.setCaixa(getCaixa()-fornecedor1.Demanda(qnt));
                 } else {
@@ -285,7 +285,7 @@ public class Pizzaria {
                 do {
                     System.out.println("Agora escolha a quantidade.\nLembrar da quantidade disponivel em caixa que atualmente é R$" + getCaixa());
                     qnt = scanner.nextInt();
-                } while(qnt*fornecedor3.getPreco()>getCaixa()||qnt*fornecedor4.getPreco()>getCaixa());
+                } while(qnt*fornecedor3.getPreco()>getCaixa()||qnt*fornecedor4.getPreco()>getCaixa()||qnt*fornecedor3.getPreco()<1||qnt*fornecedor4.getPreco()<1);
                 if (escolha == 1){
                     setCaixa(getCaixa()-fornecedor3.Demanda(qnt));
                 } else {
@@ -303,7 +303,7 @@ public class Pizzaria {
                 do {
                     System.out.println("Agora escolha a quantidade.\nLembrar da quantidade de fundos disponivel no caixa é, atualmente, R$" + getCaixa());
                     qnt = scanner.nextInt();
-                } while(qnt*fornecedor5.getPreco()>getCaixa()||qnt*fornecedor6.getPreco()>getCaixa());
+                } while(qnt*fornecedor5.getPreco()>getCaixa()||qnt*fornecedor6.getPreco()>getCaixa()||qnt*fornecedor5.getPreco()<1||qnt*fornecedor6.getPreco()<1);
                 if (escolha == 1){
                     setCaixa(getCaixa()-fornecedor5.Demanda(qnt));
                 } else {
