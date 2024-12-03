@@ -1,2 +1,3 @@
 # PizzariaCod
-![image](https://github.com/user-attachments/assets/6935a2ce-803c-4e8a-846b-ca00a7183089)
+![Captura de tela 2024-12-02 215614](https://github.com/user-attachments/assets/44cf4032-57cd-49fb-a9ac-81d5f33b9960)
+
