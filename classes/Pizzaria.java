@@ -301,7 +301,7 @@ public class Pizzaria {
                     escolha = scanner.nextInt();
                 } while (escolha<1||escolha>2);
                 do {
-                    System.out.println("Agora escolha a quantidade.\nLembrar da quantidade disponivel em caixa que atualmente é R$" + getCaixa());
+                    System.out.println("Agora escolha a quantidade.\nLembrar da quantidade de fundos disponivel no caixa é, atualmente, R$" + getCaixa());
                     qnt = scanner.nextInt();
                 } while(qnt*fornecedor5.getPreco()>getCaixa()||qnt*fornecedor6.getPreco()>getCaixa());
                 if (escolha == 1){
@@ -312,7 +312,7 @@ public class Pizzaria {
                 this.setEstoqueSobremesa(this.getEstoqueSobremesa()+qnt);
             }
         } else {
-            System.out.println("A pizzaria está sem dinheiro, atualmente para demandas.");
+            System.out.println("A pizzaria atualmente está sem dinheiro para demandas.");
         }
 
     }
